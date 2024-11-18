@@ -1,0 +1,43 @@
+<odoo>
+    <record id="wb_school_tree_view" model="ir.ui.view">
+        <field name="name">wb.school.tree.view</field>
+        <field name="model">wb.school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="school_name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--  FORM [ id & model . name . model . arch & type]-->
+    <record id="wb_school_form_view" model="ir.ui.view">
+        <field name="name">wb.school.form.view</field>
+        <field name="model">wb.school</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                            <group>
+                                <field name="school_name"/>
+                                <field name="student_ids"/>
+                            </group>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+<!--    ACTION-->
+    <record id="wb_school_action" model="ir.actions.act_window">
+        <field name="name">Schools</field>
+        <field name="res_model">wb.school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--School list-->
+    <menuitem id="wb_school_menu"
+              name="School List"
+              action="wb_school_action"
+              parent="wb_student_sub_root_menu"
+    /> <!-- parent menu id-->
+</odoo>

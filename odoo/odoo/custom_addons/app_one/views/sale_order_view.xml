@@ -1,0 +1,16 @@
+<odoo>
+    <!-- tree view (List view)-->
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">view order form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref = "sale.view_order_form"/>
+        <field name="arch" type="xml">
+<!--            <field name="partner_id" position="after">   &lt;!&ndash; old field position and new one after it&ndash;&gt;-->
+<!--                <field name="property_id"/>              &lt;!&ndash;property id is the new field &ndash;&gt;-->
+<!--            </field>-->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="property_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

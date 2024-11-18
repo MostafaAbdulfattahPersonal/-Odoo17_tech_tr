@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<!--Design views then action the menu    -->
+
+    <record id ="school_profile_tree_view" model = "ir.ui.view">
+        <field name = "name">school.profile.tree.view</field>
+        <field name = "model">school.profile</field>
+        <field name = "arch" type="xml">
+            <tree>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id ="school_profile_form_view" model = "ir.ui.view">
+        <field name = "name">school.profile.form.view</field>
+        <field name = "model">school.profile</field>
+        <field name = "arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" required="1"/>
+                        <field name="email" placeholder="abc@email.com"/>
+                        <field name="phone"/>
+                        <field name="is_virtual_class"/>
+                        <field name="school_rank" placeholder="Please enter your rank"/>
+                        <field name="result"/>
+                        <field name="address"/>
+                    </group>
+                    <group>
+                        <field name="establish_date"/>
+                        <field name="open_date"/>
+                        <field name="school_type"/>
+<!--                        <field name="student_ids" placeholder="List of students belonging to school" />-->
+                    </group>
+                    <group>
+                        <field name="documents" filename="document_name"/>
+                        <field name="document_name" invisible="1"/>
+                        <field name="school_image" widget="image"/>
+                        <field name="school_description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_school_profile" model="ir.actions.act_window">
+        <field name="name">School Profile</field>
+        <field name="res_model">school.profile</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--Designer designs menus from Outer to Root menu i.e from lower to upper-->
+    <menuitem id="school_root_menu" name="School"/>
+    <menuitem id="school_profile_sub_menu" parent="school_root_menu" name="School Profile"/>
+    <menuitem id="school_profile_menu" action="action_school_profile" parent="school_profile_sub_menu"/>
+
+
+
+</odoo>

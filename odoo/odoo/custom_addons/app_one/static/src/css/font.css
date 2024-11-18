@@ -1,0 +1,9 @@
+@font-face {
+font-family : "DancingScript";
+src : url(/app_one/static/src/fonts/DancingScript-Bold.ttf)
+}
+
+@font-face {
+font-family : "Cinzel";
+src : url(/app_one/static/src/fonts/Cinzel-ExtraBold.ttf)
+}

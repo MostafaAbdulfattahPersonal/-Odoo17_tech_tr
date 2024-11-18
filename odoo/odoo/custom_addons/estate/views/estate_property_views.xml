@@ -1,0 +1,81 @@
+<odoo>
+    <!--Search View-->
+    <record id="estate_property_search_view" model="ir.ui.view">
+        <field name="name">estate.property.search.view</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="state" invisible="1"/>
+                <filter name="filter_state_new" string="New" domain="[('state','=','new')]"/> <!--Filter has a DOMAIN which is LIST-->
+                <filter name="group_by_state" string="State" context="{'group_by':'state'}"/> <!--Group has a CONTEXT which is DICTIONARY-->
+            </search>
+
+        </field>
+    </record>
+
+
+
+    <!--Form View-->
+    <record id="estate_property_form_view" model="ir.ui.view">
+        <field name="name">estate.property.form.view</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <h1>  <!--to make this field bigger than other-->
+                            <field name="name"/>
+                            <field name="state"/>
+                        </h1>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                        <field name="date_availability"/>
+                        <field name="price"/>
+                        <field name="total_area"/>
+                        <field name="estate_property_tag_ids" widget="many2many_tags"/>
+                        <field name="living_area" editable = "1"/>
+                        <field name="garden_area" editable = "1"/>
+                    </group>
+                    <group>
+                        <field name="best_offer"/>
+                    </group>
+                    <notebook>
+                        <page string="Areas">
+                            <field name="line_ids" >
+                                <tree editable="bottom">
+                                        <field name="living_area" />
+                                        <field name="garden_area"/>
+                                        <field name="total_area" />
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree View-->
+    <record id="estate_property_tree_view" model="ir.ui.view">
+        <field name="name">estate.property.tree.view</field>
+        <field name="model">estate.property</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="price"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action-->
+    <record id="test_record" model="ir.actions.act_window">
+        <field name="name">Test</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

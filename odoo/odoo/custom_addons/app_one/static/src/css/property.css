@@ -1,0 +1,23 @@
+.header_custom table thead > tr > th {
+background-color: #7BD3EA !important;
+color: #71639E  !important;
+text-align: left !important;
+font-weight: bold !important;
+}
+
+.header_custom table thead > tr > th:nth-child(2) {
+width : 250px !important;
+}
+
+/* yellow button by Me */
+.yellow-button {
+    background-color: yellow; /* Yellow background for the button */
+    color: black; /* Black font color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 16px; /* Adjust the font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    font-weight: bold; /* Optional: Make the text bold */
+}
+

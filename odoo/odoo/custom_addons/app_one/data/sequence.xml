@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="property_sequence" model="ir.sequence">
+            <field name="name">Property Seq</field>
+            <field name="code">property_seq</field> <!--use small letters here and . or _-->
+            <field name="prefix">PRT</field>
+            <field name="padding">5</field>     <!--how many digit after prefix-->
+        </record>
+    </data>
+</odoo>
