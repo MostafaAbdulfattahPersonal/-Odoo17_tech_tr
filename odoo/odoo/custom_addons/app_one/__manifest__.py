@@ -3,6 +3,7 @@
     'author': 'Muhammad Nasser',
     'category': '',
     'version': '17.0.0.1.0',
+    'license': 'LGPL-3',
     'depends': ['base','sale_management','account','mail','contacts',
                 ],
     'data': [
@@ -23,7 +24,12 @@
 
     ],
     'assets' : {
-        'web.assets_backend': ['app_one/static/src/css/property.css'],
+        'web.assets_backend': ['app_one/static/src/css/property.css',
+                               'app_one/static/src/components/listView/listView.css',
+                               'app_one/static/src/components/listView/listView.js',
+                           'app_one/static/src/components/listView/listView.xml'
+                               ],
+
         'web.report_assets_common': ['app_one/static/src/css/font.css']
     },
     'application': True,

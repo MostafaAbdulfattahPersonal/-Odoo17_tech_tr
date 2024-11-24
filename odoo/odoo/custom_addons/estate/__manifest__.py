@@ -2,6 +2,7 @@
     "name": "The Real Estate",
     "summary": "Sample module",
     "version": "17.0.0.1.0",
+    "license": "LGPL-3",
     "depends": ['base'],
     "data": [
         # SECURITY

@@ -4,7 +4,10 @@
         <field name="model">wb.school</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="id"/>
                 <field name="school_name"/>
+                <field name="amount"/>
+                <field name="my_currency_id"/>
             </tree>
         </field>
     </record>
@@ -17,10 +20,19 @@
             <form>
                 <group>
                     <group>
-                            <group>
-                                <field name="school_name"/>
-                                <field name="student_ids"/>
-                            </group>
+                        <group>
+                            <field name="school_name"/>
+                            <field name="amount"/>
+                            <field name="my_currency_id"/>
+                            <field name="ref_field_id"/>
+                            <field name="invoice_id"/>
+                            <field name="invoice_user_id"/>
+                            <field name="invoice_date"/>
+                            <field name="binary_field" filename="binary_file_name"/>
+                            <field name="binary_file_name" invisible="1"/> <!--no need to show it -->
+                            <field name="binary_fields" widget="many2many_binary"/>
+                            <!--<field name="student_ids"/>-->
+                        </group>
                     </group>
                 </group>
             </form>
